@@ -26,7 +26,7 @@ export const Navbar: React.FC = () => {
           {/* Botones desktop */}
           <div className="hidden md:flex items-center gap-6">
             <a 
-              href="https://wa.me/5491168014839"
+              href="https://wa.me/5491122715446"
               aria-label="Contactar por WhatsApp"
               className="bg-slate-900 text-white px-7 py-3 rounded-full hover:bg-slate-800 transition-all duration-300 font-bold text-[10px] uppercase tracking-widest"
             >
