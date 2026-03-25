@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
 
         
         <div className="pt-16 mt-16 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.3em]">
-          <p>© 2024 LEIDEN | Talento & Organización</p>
+          <p>© 2026 LEIDEN | Talento & Organización</p>
           <div className="flex gap-8 text-slate-300">
             <span>Escuchar</span>
             <span>Comprender</span>
