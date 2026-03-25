@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
             Contactanos por mail
           </a>
           <a 
-            href="https://wa.me/5491168014839"
+            href="https://wa.me/5491122715446"
             className="w-full sm:w-auto px-12 py-5 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all flex items-center justify-center gap-3"
           >
             Contactanos por WhatsApp
