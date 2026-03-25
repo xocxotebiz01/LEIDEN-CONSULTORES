@@ -50,7 +50,7 @@ export const Contact: React.FC = () => {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Email Corporativo</label>
+                  <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Email </label>
                   <input type="email" required className="w-full p-4 bg-slate-50 border border-slate-100 rounded-xl outline-none focus:border-slate-900 transition" />
                 </div>
                 <div className="space-y-2 relative">
