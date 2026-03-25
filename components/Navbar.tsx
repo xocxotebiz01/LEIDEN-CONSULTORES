@@ -25,7 +25,14 @@ export const Navbar: React.FC = () => {
               className="bg-slate-900 text-white px-7 py-3 rounded-full hover:bg-slate-800 transition-all duration-300 font-bold text-[10px] uppercase tracking-widest"
             >
               WhatsApp
-            </a>
+            </a>  
+  <a 
+    href="https://www.leiden.com.ar/#contacto"
+    className="bg-slate-900 text-white px-7 py-3 rounded-full hover:bg-slate-800 transition-all duration-300 font-bold text-[10px] uppercase tracking-widest"
+  >
+    Form. Consulta
+  </a>
+
           </div>
         </div>
       </div>
