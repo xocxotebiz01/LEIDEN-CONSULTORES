@@ -58,7 +58,7 @@ export const ImplementationFocus: React.FC = () => {
         </div>
 
         <div className="mt-32 pt-16 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-          <p className="text-sm font-medium text-slate-400 italic">"Nuestra maestría reside en saber escuchar antes de proponer."</p>
+          <p className="text-sm font-medium text-slate-400 italic">"Nuestra fortaleza reside en saber escuchar antes de proponer."</p>
           <a 
             href="#contacto" 
             className="px-8 py-4 bg-white text-slate-900 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-slate-200 transition-all"
