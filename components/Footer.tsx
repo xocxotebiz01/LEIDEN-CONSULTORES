@@ -11,6 +11,7 @@ export const Footer: React.FC = () => {
               Consultoría estratégica para organizaciones que buscan evolucionar a través de su gente. Profesionalismo, ética y humildad técnica.
             </p>
           </div>
+
           <div className="grid grid-cols-2 gap-20">
             <div>
               <h4 className="text-slate-900 font-bold mb-6 text-xs uppercase tracking-widest">Áreas</h4>
@@ -20,9 +21,13 @@ export const Footer: React.FC = () => {
                 <li><a href="#consultoria" className="hover:text-slate-900 transition">Consultoría</a></li>
               </ul>
             </div>
-            <div>
 
-        
+            <div>
+              {/* acá podés agregar otra columna si querés, o dejarlo vacío */}
+            </div>
+          </div>
+        </div>
+
         <div className="pt-16 mt-16 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.3em]">
           <p>© 2026 LEIDEN | Talento & Organización</p>
           <div className="flex gap-8 text-slate-300">
