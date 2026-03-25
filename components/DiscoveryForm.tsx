@@ -18,7 +18,7 @@ export const DiscoveryForm: React.FC<DiscoveryFormProps> = ({ onClose }) => {
 
   const handleWhatsAppRedirect = () => {
     const text = `Hola LEIDEN, soy ${formData.name} de ${formData.company}. Me interesa conversar sobre: ${formData.focus} para nuestra organización.`;
-    window.open(`https://wa.me/5491168014839?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/5491122715446?text=${encodeURIComponent(text)}`, '_blank');
     onClose();
   };
 
