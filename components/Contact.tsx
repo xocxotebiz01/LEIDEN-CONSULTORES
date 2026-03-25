@@ -1,28 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // o Next.js: import Link from 'next/link';
+import React, { useState } from 'react';
 
-export const Gracias: React.FC = () => {
+export const Contact: React.FC = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const [message, setMessage] = useState('');
+
   return (
-    <section className="py-32 bg-white text-center">
-      <div className="max-w-2xl mx-auto px-6">
-        <div className="w-20 h-20 bg-slate-50 text-slate-900 rounded-full flex items-center justify-center mx-auto mb-8 shadow">
-          <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-          </svg>
-        </div>
-        <h1 className="text-4xl font-extrabold text-slate-900 mb-4">¡Gracias por tu consulta!</h1>
-        <p className="text-lg text-slate-600 mb-10 font-medium">
-          Un consultor de nuestro equipo se pondrá en contacto con vos a la brevedad.  
-          Valoramos tu interés en LEIDEN y estamos listos para acompañar tu organización.
-        </p>
-        
-        <Link 
-          to="/" // en Next.js sería <Link href="/">Inicio</Link>
-          className="inline-block px-10 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all"
-        >
-          Volver al Inicio
-        </Link>
-      </div>
-    </section>
-  );
-};
+    <section id="contacto" className="py-32 bg-slate-50 border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-20 items-start">
+          {/* Texto institucional + datos de contacto */}
+          <div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 tracking-tight">
+              Acompañamos su <br/><span className="text-slate-500">visión a largo plazo.</span>
+            </h2>
+            <p className="text-xl text-slate-600 mb-10 leading-relaxed font-medium">
+              Sabemos que cada organización es única. Nos gustaría conocer sus desafíos específicos en la gestión de capital humano y explorar cómo LEIDEN puede sumar valor a su estructura.
+            </p>
+            
+            <div className="flex flex-col gap-6">
+              {/* Mail */}
+              <div className="flex items-center gap-4 group">
+                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-900 shadow-sm border border-slate-100">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                   
