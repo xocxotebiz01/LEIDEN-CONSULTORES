@@ -21,14 +21,7 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
             <div>
-              <h4 className="text-slate-900 font-bold mb-6 text-xs uppercase tracking-widest">Legal</h4>
-              <ul className="space-y-4 text-sm font-semibold">
-                <li>Privacidad</li>
-                <li>Ética Profesional</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+
         
         <div className="pt-16 mt-16 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.3em]">
           <p>© 2024 LEIDEN | Talento & Organización</p>
