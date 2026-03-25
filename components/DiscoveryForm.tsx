@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 interface DiscoveryFormProps {
@@ -18,7 +17,9 @@ export const DiscoveryForm: React.FC<DiscoveryFormProps> = ({ onClose }) => {
 
   const handleWhatsAppRedirect = () => {
     const text = `Hola LEIDEN, soy ${formData.name} de ${formData.company}. Me interesa conversar sobre: ${formData.focus} para nuestra organización.`;
-    window.open(`https://wa.me/5491122715446?text=${encodeURIComponent(text)}`, '_blank');
+    if (typeof window !== 'undefined') {
+      window.open(`https://wa.me/5491122715446?text=${encodeURIComponent(text)}`, '_blank');
+    }
     onClose();
   };
 
@@ -41,7 +42,8 @@ export const DiscoveryForm: React.FC<DiscoveryFormProps> = ({ onClose }) => {
             ].map((p) => (
               <button
                 key={p.id}
-                onClick={() => { setFormData({...formData, focus: p.label}); nextStep(); }}
+                type="button"
+                onClick={() => { setFormData({ ...formData, focus: p.label }); nextStep(); }}
                 className="w-full text-left p-6 border border-slate-100 rounded-2xl hover:border-blue-600 hover:bg-blue-50 transition-all font-bold text-slate-700 shadow-sm"
               >
                 {p.label}
@@ -59,24 +61,25 @@ export const DiscoveryForm: React.FC<DiscoveryFormProps> = ({ onClose }) => {
               placeholder="Nombre y Apellido" 
               className="w-full p-4 bg-slate-50 border border-slate-100 rounded-xl outline-none focus:border-blue-600"
               value={formData.name}
-              onChange={(e) => setFormData({...formData, name: e.target.value})}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             />
             <input 
               type="text" 
               placeholder="Cargo / Rol" 
               className="w-full p-4 bg-slate-50 border border-slate-100 rounded-xl outline-none focus:border-blue-600"
               value={formData.role}
-              onChange={(e) => setFormData({...formData, role: e.target.value})}
+              onChange={(e) => setFormData({ ...formData, role: e.target.value })}
             />
             <input 
               type="text" 
               placeholder="Organización" 
               className="w-full p-4 bg-slate-50 border border-slate-100 rounded-xl outline-none focus:border-blue-600"
               value={formData.company}
-              onChange={(e) => setFormData({...formData, company: e.target.value})}
+              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
             />
           </div>
           <button 
+            type="button"
             onClick={handleWhatsAppRedirect}
             className="w-full py-5 bg-blue-600 text-white rounded-xl font-bold text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-50"
           >
