@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const PainPoints: React.FC = () => {
@@ -34,13 +33,17 @@ export const PainPoints: React.FC = () => {
         </div>
         
         <div className="grid md:grid-cols-3 gap-10">
-          {challenges.map((item, idx) => (
-            <div key={idx} className="relative aspect-[3/4] rounded-[2rem] overflow-hidden group">
-              <img src={item.img} className="absolute inset-0 w-full h-full object-cover grayscale transition duration-700 group-hover:grayscale-0 group-hover:scale-105" alt={item.title} />
+          {challenges.map((item) => (
+            <div key={item.title} className="relative aspect-[3/4] rounded-[2rem] overflow-hidden group">
+              <img 
+                src={item.img} 
+                alt={`Imagen representando ${item.title}`} 
+                className="absolute inset-0 w-full h-full object-cover grayscale transition duration-700 group-hover:grayscale-0 group-hover:scale-105" 
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
               <div className="absolute bottom-0 p-10 text-white">
                 <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
-                <p className="text-slate-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                <p className="text-slate-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200 transform translate-y-4 group-hover:translate-y-0">
                   {item.desc}
                 </p>
               </div>
