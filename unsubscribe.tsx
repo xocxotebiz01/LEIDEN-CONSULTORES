@@ -30,7 +30,6 @@ const Unsubscribe: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-6">
-      <img src="/logo.png" alt="Leiden Consultores" className="mb-6 w-40" />
       <h1 className="text-2xl font-bold mb-4">Cancelar suscripción</h1>
       <p className="mb-4">Ingresá tu correo para darte de baja de nuestras comunicaciones.</p>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full max-w-sm">
