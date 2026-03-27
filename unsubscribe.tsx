@@ -30,7 +30,7 @@ const Unsubscribe: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-6">
-      <h1 className="text-2xl font-bold mb-4">Cancelar suscripción</h1>
+      <h1 className="text-2xl font-bold mb-4">No quiero recibir mas correos</h1>
       <p className="mb-4">Ingresá tu correo para darte de baja de nuestras comunicaciones.</p>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full max-w-sm">
         <input
