@@ -32,7 +32,7 @@ export default function Unsubscribe() {
     <div style={{ maxWidth: "600px", margin: "40px auto", fontFamily: "Arial", textAlign: "center" }}>
       {/* Logo arriba */}
       <img
-        src="/logo.png" // reemplazá con la ruta real de tu logo en la carpeta public/
+        src="/logo1.svg" // reemplazá con la ruta real de tu logo en la carpeta public/
         alt="Logo Leiden Consultores"
         style={{ maxWidth: "200px", marginBottom: "20px" }}
       />
