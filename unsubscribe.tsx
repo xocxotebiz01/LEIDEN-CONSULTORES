@@ -10,7 +10,7 @@ const Unsubscribe: React.FC = () => {
 
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycby9iHnaEfit33xRo5QfRTsZQx82w9ESFzzRUpoD8BtTKiqWh9EaR2ve55KtBFkfJSmFRg/exec",
+        "https://script.google.com/macros/s/AKfycbyyuVhk4PC0EnoLvsaMDY-t4qmV3oITZzyFIxntt5lWUk088drlzmpFNYcb_rLObd49qw/exec",
         {
           method: "POST",
           body: new URLSearchParams({ email }),
