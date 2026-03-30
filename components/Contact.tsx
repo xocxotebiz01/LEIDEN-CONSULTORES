@@ -4,6 +4,33 @@ export const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [message, setMessage] = useState('');
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const formData = {
+      nombre: (e.currentTarget as any).nombre.value,
+      organizacion: (e.currentTarget as any).organizacion.value,
+      email: (e.currentTarget as any).email.value,
+      mensaje: (e.currentTarget as any).mensaje.value,
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        console.error('Error enviando el formulario');
+      }
+    } catch (error) {
+      console.error('Error de red:', error);
+    }
+  };
+
   return (
     <section id="contacto" className="py-32 bg-slate-50 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,9 +43,7 @@ export const Contact: React.FC = () => {
             <p className="text-xl text-slate-600 mb-10 leading-relaxed font-medium">
               Sabemos que cada organización es única. Nos gustaría conocer sus desafíos específicos en la gestión de capital humano y explorar cómo LEIDEN puede sumar valor a su estructura.
             </p>
-
             <div className="flex flex-col gap-6">
-              {/* Mail */}
               <div className="flex items-center gap-4 group">
                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-900 shadow-sm border border-slate-100">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -30,8 +55,6 @@ export const Contact: React.FC = () => {
                   <p className="text-lg font-bold text-slate-900">contacto@leiden.com.ar</p>
                 </div>
               </div>
-
-              {/* Teléfono */}
               <div className="flex items-center gap-4 group">
                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-900 shadow-sm border border-slate-100">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -60,15 +83,7 @@ export const Contact: React.FC = () => {
                 <p className="text-slate-500 font-medium">Un consultor de nuestro equipo se pondrá en contacto con usted a la brevedad.</p>
               </div>
             ) : (
-              <form 
-                action="https://formsubmit.co/contacto@leiden.com.ar" 
-                method="POST" 
-                onSubmit={() => setSubmitted(true)} 
-                className="space-y-6"
-              >
-                <input type="hidden" name="_next" value="https://www.leiden.com.ar/gracias" />
-                <input type="text" name="_honey" style={{ display: 'none' }} />
-
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Nombre Completo</label>
@@ -79,12 +94,10 @@ export const Contact: React.FC = () => {
                     <input name="organizacion" type="text" required className="w-full p-4 bg-slate-50 border border-slate-100 rounded-xl outline-none focus:border-slate-900 transition" />
                   </div>
                 </div>
-
                 <div className="space-y-2">
                   <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Email</label>
                   <input name="email" type="email" required className="w-full p-4 bg-slate-50 border border-slate-100 rounded-xl outline-none focus:border-slate-900 transition" />
                 </div>
-
                 <div className="space-y-2 relative">
                   <div className="flex justify-between items-center mb-1">
                     <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Motivo de su consulta</label>
@@ -92,9 +105,9 @@ export const Contact: React.FC = () => {
                       {message.length} / 1000
                     </span>
                   </div>
-                  <textarea 
+                  <textarea
                     name="mensaje"
-                    required 
+                    required
                     maxLength={1000}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
@@ -103,7 +116,6 @@ export const Contact: React.FC = () => {
                     className="w-full p-4 bg-slate-50 border border-slate-100 rounded-xl outline-none focus:border-slate-900 transition resize-none"
                   ></textarea>
                 </div>
-
                 <button type="submit" className="w-full py-5 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all flex items-center justify-center gap-3">
                   Enviar Mensaje
                 </button>
