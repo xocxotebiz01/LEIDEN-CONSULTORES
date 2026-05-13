@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 
 import { Hero } from './components/Hero';
 import { TopTrainings } from './components/TopTrainings';
@@ -40,6 +41,7 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
+        <Analytics />
       </div>
     </Router>
   );
