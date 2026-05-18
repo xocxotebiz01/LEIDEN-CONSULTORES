@@ -13,6 +13,9 @@ import { Navbar } from './components/Navbar';
 // Importá tu página de baja
 import Unsubscribe from './unsubscribe';
 
+// Importá Analytics de Vercel
+import { Analytics } from "@vercel/analytics/react";
+
 const App: React.FC = () => {
   return (
     <Router>
@@ -40,9 +43,13 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
+
+        {/* Analytics de Vercel */}
+        <Analytics />
       </div>
     </Router>
   );
 };
 
 export default App;
+
